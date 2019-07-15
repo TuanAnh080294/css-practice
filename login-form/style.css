@@ -38,7 +38,7 @@ body {
 
   .input-group label {
     position: absolute;
-    left: 6px;
+    left: 0px;
     top: 4px;
     pointer-events: none;
     font-size: 15px;
@@ -48,7 +48,7 @@ body {
 
   input:focus + label, input:valid + label{
     top: -14px;
-    left: 4px;
+    left: -4px;
     font-size: 13.5px;
     color: dodgerblue;
   }
@@ -69,4 +69,10 @@ body {
 
   form p {
     margin-top: 3rem;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  form p a {
+    color: inherit;
   }
