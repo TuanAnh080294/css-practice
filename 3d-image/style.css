@@ -1,0 +1,47 @@
+body {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    display: grid;
+    grid-template-columns:  repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+.wrapper {
+    display: block;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.wrapper:hover .box .card {
+    transform: translate(100px, -100px);
+    background-color: rgba(242, 242, 242, 0.541);
+}
+
+.wrapper:hover {
+    background-color: rgba(170, 169, 169, 0.589);
+}
+
+.box {
+    position: relative;
+    transform: rotate(-30deg) skew(30deg) scale(0.3);
+    display: inline-block;
+    background-color: #F2F2F2;
+    box-shadow: 4px 4px 5px 5px #0000003b;
+}
+
+.card {
+    border-radius: 4px;
+    padding: 10px 10px 6px 10px;
+    background-color: white;
+    background-color: transparent;
+    border: 1px solid gray;
+    transition: 0.2s;
+}
+
+.card .title {
+    text-align: center;
+    font-size: 1.8rem;
+}
