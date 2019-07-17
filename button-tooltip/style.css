@@ -1,0 +1,111 @@
+body {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    align-content: space-between;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: transparent;
+    outline: none;
+    font-size: 1.5rem;
+    box-shadow: 1px 1px 3px 3px #565555a6;
+    position: relative;
+    transition: 0.2s all;
+}
+
+button:nth-child(1) {
+    border: firebrick 1px solid;
+    color: firebrick;
+}
+
+button:nth-child(2) {
+    border: #00bf72 1px solid;
+    color: #00bf72;
+}
+
+button::before {
+    content: attr(data-content);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 150px;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: transparent;
+    opacity: 0;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:nth-child(1)::before {
+    border: 2px solid firebrick;
+    color: firebrick;
+}
+
+button:nth-child(2)::before {
+    border: #01643d solid 2px;
+    color: #01643d;
+}
+
+
+
+button::after {
+    content: '';
+    position: absolute;
+    border-left: 8px solid transparent;  
+    border-right: 8px solid transparent; 
+    /* border-top: 8px solid #FFF; */
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%);  
+    opacity: 0;
+    transition: 0.4s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+button:hover::after, button:hover::before {
+    opacity: 1;
+}
+
+button:nth-child(1)::after {
+    border-top: 8px solid firebrick;
+}
+
+button:nth-child(2)::after {
+    border-top: 8px solid #01643d;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #FFF;
+    top: -10px;
+    box-shadow: 4px 4px 4px 4px #565555;
+}
+
+button:active {
+    transform: translate(5px, 5px);
+}
+
+button:nth-child(1):hover {
+    background-color: firebrick;
+}
+
+button:nth-child(2):hover {
+    background-color: #00bf72;
+}
+
+button:hover::before {
+    top: -70%;
+}
+
+button:hover::after {
+    top: -44%;
+}
