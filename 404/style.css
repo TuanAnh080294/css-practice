@@ -1,0 +1,71 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	background-image: linear-gradient(to right top, #051937, #00163f, #001245, #000c4b, #03034f);
+}
+
+.superman img {
+	width: 150px;
+	transform: rotate(45deg);
+	position: absolute;
+	top: 55%;
+	animation: supermanAnimation 6s infinite linear;
+}
+
+.star {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	background-color: red;
+	animation: starAnimation 2s infinite linear;
+	z-index: -1;
+}
+
+.title {
+	color: #FFF;
+	font-size: 130px;
+}
+
+p {
+	color: #FFF;
+	font-size: 28px;
+}
+
+button {
+	padding: 10px 20px;
+	border: none;
+}
+
+@keyframes supermanAnimation {
+	from {
+		left: -150px;
+	}
+	to {
+		left: 110%;
+	}
+}
+
+@keyframes starAnimation {
+	0% {
+		box-shadow: 0px 0px 5px rgba(255, 255, 255, .4);
+	}
+	20% {
+		box-shadow: 0px 0px 15px rgba(255, 255, 255, .4);
+	}
+	40% {
+		box-shadow: 0px 0px 5px rgba(255, 255, 255, .4);
+	}
+	60% {
+		box-shadow: 0px 0px 15px rgba(255, 255, 255, .4);
+	}
+	80% {
+		box-shadow: 0px 0px 5px rgba(255, 255, 255, .4);
+	}
+	100% {
+		box-shadow: 0px 0px 15px rgba(255, 255, 255, .4);
+	}
+}
