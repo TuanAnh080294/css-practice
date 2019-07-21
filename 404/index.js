@@ -18,8 +18,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			if(right >= screen.width) {
 				star.remove();
 			}
-			right += 3;
+			right += 4;
 			star.style.right =  right + "px";
+			setTimeout(function() {
+				star.remove();
+			}, 6000)
 		}
 	}
 	
