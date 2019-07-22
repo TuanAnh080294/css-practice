@@ -1,0 +1,118 @@
+/* @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"); */
+@import url('https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap');
+@font-face {
+    font-family: fontAwesome;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-solid-900.woff");
+}
+
+body {
+    background-image: linear-gradient(to right top, #5c4187, #823f77, #984565, #a15256, #a1634d);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.list {
+    width: 300px;
+    background-image: linear-gradient(to right top, #845ec2, #c05cb0, #e66599, #fa7a82, #ff9671);
+    border-radius: 10px;
+    box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.4); 
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.item input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    outline: none;  
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s all;
+    z-index: 2;
+}
+
+.item input[type="checkbox"]::before {
+    content: '\f00c';
+    position: absolute;  
+    font-family: 'fontAwesome';
+    color: #5c4187;
+    opacity: 0;
+}
+
+.item input[type="checkbox"]:checked::before {
+    opacity: 1;
+}
+
+.item input[type="checkbox"]:checked {
+    border: #5c4187 solid 2px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.item input[type="checkbox"]:checked ~ label {
+    color: #FFF;
+}
+
+.item input[type="checkbox"]:checked ~ span {
+    color: #5c4187;
+    animation: logoAnimation 1s;
+}
+
+.item input[type="checkbox"]:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
+
+.item label::before {
+    content: '';
+    width: 150px;
+    height: 100%;
+    top: 0;
+    left: -100px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.1);
+    transform: skew(30deg);
+    transition: 0.4s all;
+}
+
+.item input[type="checkbox"]:checked ~ label::before {
+    left: 110%;
+    background: rgba(92, 65, 135, 0.5);
+}
+
+@keyframes logoAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(-30deg);
+    }
+    50% {
+        
+        transform: rotate(-10deg);
+    }
+    75% {
+        transform: rotate(-3deg)
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
