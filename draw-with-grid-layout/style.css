@@ -1,0 +1,80 @@
+/* col 42
+row 59 */
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: row;
+    color: transparent;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(42, 2px);
+    grid-template-rows: repeat(59, 2px);
+}
+
+div {
+    /* border: 1px solid black; */
+    /* border-radius: 50%; */
+}
+
+.black {
+    background: #000;
+}
+
+.brown1 {
+    background: rgb(135, 93, 71);
+}
+
+.brown2 {
+    background: rgb(216, 133, 101);
+}
+
+.brown3 {
+    background: rgb(242, 202, 192);
+}
+
+.gray {
+    background: rgb(189, 187, 201);
+}
+
+.orange1 {
+    background: rgb(233, 137, 77);
+}
+
+.orange3 {
+    background: rgb(244, 194, 61);
+}
+
+.orange2 {
+    background: rgb(255, 137, 67);
+}
+
+.yellown2 {
+    background: rgb(253, 254, 72);
+}
+
+.yellown1 {
+    background: rgb(246, 218, 83);
+}
+
+.blue1 {
+    background: rgb(89, 85, 195);
+}
+
+.blue2 {
+    background: rgb(179, 205, 255);
+}
+
+.red {
+    background: rgb(220, 58, 81);
+}
+
+.green {
+    background: rgb(137, 189, 63);
+}
