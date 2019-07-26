@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #9d509b, #a2478e, #a63e81, #a83673, #a82e65);
+}
+
+button {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    border: 0px;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4);
+    outline: none;
+    position: relative;
+    transition: 0.3s all;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+button:nth-child(1) {
+    background: #00BDCF;
+}
+
+button:nth-child(2) {
+    background: #07CFC6;
+}
+
+button:active {
+    transform: translate(2px, 5px);
+    box-shadow: none;
+}
+
+.ripple1 {
+    background: rgba(255, 255, 255, 0.4);
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    width: 0px;    
+    height: 0px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: ripple1Animation 1s ease-in-out;
+}
+
+.ripple2 {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: ripple2Animation 1s ease-in-out;
+    border: 0px solid rgba(255, 255, 255, 0.4);
+}
+
+@keyframes ripple1Animation {
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+@keyframes ripple2Animation {
+    100% {
+        width: 500px;
+        height: 500px;
+        border: 100px solid rgba(255, 255, 255, 0.4);
+        opacity: 0;
+    }
+}

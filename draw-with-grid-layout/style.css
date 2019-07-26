@@ -18,10 +18,10 @@ section {
     grid-template-rows: repeat(59, 2px);
 }
 
-div {
-    /* border: 1px solid black; */
-    /* border-radius: 50%; */
-}
+/* div {
+    border: 1px solid black; 
+    border-radius: 50%; 
+} */
 
 .black {
     background: #000;
