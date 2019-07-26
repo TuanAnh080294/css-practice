@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     var canvas = document.querySelector("canvas");
     var c = canvas.getContext('2d');
+    var cadic = new Image();
+    cadic.src = "cadic.png";
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -66,12 +68,13 @@ document.addEventListener("DOMContentLoaded", function() {
         c.closePath();
         
         c.beginPath();
-        c.font = "30px source sans-serif";
-        c.fillStyle = "red";
-        c.shadowColor = "white";
-        c.shadowBlur = 5;
-        c.textAlign = "center";
-        c.fillText("T.A", mouse.x, mouse.y);
+        // c.font = "30px source sans-serif";
+        // c.fillStyle = "red";
+        // c.shadowColor = "white";
+        // c.shadowBlur = 5;
+        // c.textAlign = "center";
+        // c.fillText("T.A", mouse.x, mouse.y);
+        c.drawImage(cadic, mouse.x - 50, mouse.y - 100, 100, 200);
         c.fill();
         c.closePath();
         c.restore();
