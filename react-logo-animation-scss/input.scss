@@ -1,0 +1,90 @@
+$color: #43C3E5;
+$sectionVH: 60vh;
+$bgcolor: #000;
+
+@mixin flexbox($direction, $justifyContent, $alignItem) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justifyContent;
+    align-items: $alignItem;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+    @include flexbox(row, center, center);
+    section {
+        width: $sectionVH;
+        height: $sectionVH;
+        animation: sectionAnimation 10s linear infinite;
+        // background-color: red;
+        @include flexbox(row, center, center);
+
+        div {
+            position: absolute;
+            &:nth-child(4) {
+                width: $sectionVH / 7;
+                height: $sectionVH / 7;
+                background-color: #43C3E5;
+                border-radius: 50%;
+                animation: circleAnimation 2s linear infinite;
+                // box-shadow: 0px 0px 15px #43C3E5;
+            }
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    
+                    width: $sectionVH;
+                    height: $sectionVH;
+                    border-radius: 100%;
+                    transform: rotateZ(120deg * $i) rotateX(65deg);
+                    // background-color: rgba(255, 255, 255, 0.3);
+                    border-top: 20px solid $color;
+                    border-left: 20px solid $color;
+                    animation: rotateAnimation-#{$i} 2s linear infinite;
+                    // box-shadow: 0px 0px 15px #43C3E5;
+                }
+            }
+        }
+    }
+}
+
+@for $i from 1 through 3 {
+    @keyframes rotateAnimation-#{$i} {
+        from {
+            transform: rotateZ(120deg * $i) rotateX(65deg) rotateZ(0);
+        }
+        to {
+            transform: rotateZ(120deg * $i) rotateX(65deg) rotateZ(360deg);
+        }
+
+        0%, 20%, 40%, 60%, 80%, 100% {
+            box-shadow: -10px -10px 20px $color;
+        }
+        10%, 30%, 50%, 70%, 90% {
+            box-shadow: -10px -10px 5px $color;
+        }
+    }
+}
+
+@keyframes sectionAnimation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes circleAnimation {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        box-shadow: 0px 0px 20px $color;
+        transform: scale(0.9);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        box-shadow: 0px 0px 5px $color;
+        transform: scale(1);
+    }
+}
